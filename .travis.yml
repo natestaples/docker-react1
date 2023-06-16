@@ -12,10 +12,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker"
+  app: "web"
   env: "e-we3ttbsjmi"
   bucket_name: "elasticbeanstalk-us-east-2-014567610581"
-  bucket_path: "docker"
+  bucket_path: "web"
   on:
     branch: master
   acces_key_id: $aws_access_key
