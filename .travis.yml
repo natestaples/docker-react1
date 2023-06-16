@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true staplesna/docker-react1 npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker"
+  env: "e-we3ttbsjmi"
+  bucket_name: "elasticbeanstalk-us-east-2-014567610581"
+  bucket_path: "docker"
+  on:
+    branch: master
+  acces_key_id: $aws_access_key
+  secret_access_key: "$aws_secret_key"
+  
